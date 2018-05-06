@@ -6,6 +6,8 @@ import com.pize.cashboy.mvp.contract.MainContract
 import com.pize.cashboy.mvp.model.MainModel
 import com.pize.cashboy.mvp.model.entity.BaseResponse
 import com.pize.cashboy.mvp.model.entity.UserEntity
+import com.pize.cashboy.rx.errorhandle.ErrorSubscriber
+import com.pize.cashboy.utils.RxUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import java.util.logging.Logger
 
@@ -44,16 +46,14 @@ class MainPresenter : BasePresenter<MainContract.View>(), MainContract.Presenter
                         mRootView?.endLoadMore()
                     }
                 }
-                .subscribe({ userList: ArrayList<UserEntity>? ->
-                    mRootView?.setUserDate(userList!!)
-                    lastIdQueried++
-                },
-                        { throwble ->
-                            mRootView?.apply {
-                                showMessage(throwble.toString())
-                            }
-                        })
-        addSubscription(disposable)
+                .subscribe(object : ErrorSubscriber<ArrayList<UserEntity>>(rxErrorHandler) {
+                    override fun toNext(userList: ArrayList<UserEntity>) {
+                        mRootView?.setUserDate(userList!!)
+                        lastIdQueried++
+                    }
+                })
+
+        //addSubscription(disposable)
     }
 
 

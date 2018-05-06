@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
-import com.pize.cashboy.MyApplication
+import com.pize.cashboy.BaseApplication
 
 /**
  * @author wangxiaodong
@@ -54,7 +54,7 @@ abstract class BaseActivity : AppCompatActivity(), IBaseView {
 
     override fun onDestroy() {
         super.onDestroy()
-        MyApplication.getRefWatcher(this)?.watch(this)
+        BaseApplication.getRefWatcher(this)?.watch(this)
     }
 
 

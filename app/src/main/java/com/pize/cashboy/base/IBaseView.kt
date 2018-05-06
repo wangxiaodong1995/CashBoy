@@ -1,5 +1,6 @@
 package com.pize.cashboy.base
 
+import android.content.Context
 import android.content.Intent
 
 /**
@@ -18,4 +19,6 @@ interface IBaseView {
     fun launchActivity(intent: Intent?)
 
     fun killMyself();
+
+    fun geActivity(): Context?
 }

@@ -13,7 +13,7 @@ import android.graphics.Shader
 
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
-import com.pize.cashboy.MyApplication
+import com.pize.cashboy.BaseApplication
 
 import java.security.MessageDigest
 
@@ -27,7 +27,7 @@ import java.security.MessageDigest
  *
  */
 
-class GlideRoundTransform @JvmOverloads constructor(context: Context = MyApplication.context, dp: Int = 4) : BitmapTransformation(context) {
+class GlideRoundTransform @JvmOverloads constructor(context: Context = BaseApplication.context, dp: Int = 4) : BitmapTransformation(context) {
 
     private var radius = 0f
 

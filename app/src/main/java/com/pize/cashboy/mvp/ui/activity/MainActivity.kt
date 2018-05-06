@@ -53,7 +53,7 @@ class MainActivity : BaseActivity(), MainContract.View, SwipeRefreshLayout.OnRef
 
 
     override fun setUserDate(userList: ArrayList<UserEntity>?) {
-        mAdapter.setData(userList!!)
+        mAdapter.addData(userList!!)
     }
 
     override fun endLoadMore() {

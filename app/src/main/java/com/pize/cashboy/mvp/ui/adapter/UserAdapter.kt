@@ -1,14 +1,7 @@
 package com.pize.cashboy.mvp.ui.adapter
 
-import android.app.Activity
 import android.content.Context
-import android.content.Intent
-import android.graphics.Typeface
-import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.pize.cashboy.MyApplication
 import com.pize.cashboy.R
 import com.pize.cashboy.glide.GlideApp
 import com.pize.cashboy.mvp.model.entity.UserEntity

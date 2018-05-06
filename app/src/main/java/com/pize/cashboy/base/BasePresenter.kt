@@ -1,8 +1,9 @@
 package com.pize.cashboy.base
 
+import com.pize.cashboy.rx.errorhandle.core.RxErrorHandler
+import com.pize.cashboy.rx.errorhandle.listener.ResponseErrorListener
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-
 
 
 /**
@@ -16,6 +17,11 @@ open class BasePresenter<T : IBaseView> : IPresenter<T> {
 
     private var compositeDisposable = CompositeDisposable()
 
+    var rxErrorHandler: RxErrorHandler = RxErrorHandler
+            .builder()
+            .with(mRootView?.geActivity())
+            .responseErrorListener(ResponseErrorListener.EMPTY)
+            .build()
 
     override fun attachView(mRootView: T) {
         this.mRootView = mRootView
@@ -24,7 +30,7 @@ open class BasePresenter<T : IBaseView> : IPresenter<T> {
     override fun detachView() {
         mRootView = null
 
-         //保证activity结束时取消所有正在执行的订阅
+        //保证activity结束时取消所有正在执行的订阅
         if (!compositeDisposable.isDisposed) {
             compositeDisposable.clear()
         }

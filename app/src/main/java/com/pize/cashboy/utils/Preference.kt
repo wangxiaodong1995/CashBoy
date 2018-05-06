@@ -3,7 +3,7 @@ package com.pize.cashboy.utils
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
-import com.pize.cashboy.MyApplication
+import com.pize.cashboy.BaseApplication
 import java.io.*
 import kotlin.reflect.KProperty
 
@@ -19,7 +19,7 @@ class Preference<T>(val name:String, private val default:T) {
     }
 
     private val prefs: SharedPreferences by lazy {
-        MyApplication.context.getSharedPreferences(file_name, Context.MODE_PRIVATE)
+        BaseApplication.context.getSharedPreferences(file_name, Context.MODE_PRIVATE)
     }
 
 

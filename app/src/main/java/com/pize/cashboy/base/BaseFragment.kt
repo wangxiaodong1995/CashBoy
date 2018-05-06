@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.classic.common.MultipleStatusView
-import com.pize.cashboy.MyApplication
+import com.pize.cashboy.BaseApplication
 
 /**
  * @author wangxiaodong
@@ -102,6 +102,6 @@ abstract class BaseFragment : Fragment(), IBaseView {
 
     override fun onDestroy() {
         super.onDestroy()
-        MyApplication.getRefWatcher(activity)?.watch(activity)
+        BaseApplication.getRefWatcher(activity)?.watch(activity)
     }
 }

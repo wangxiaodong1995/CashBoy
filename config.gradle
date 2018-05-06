@@ -41,7 +41,8 @@ ext {
     ]
 
     view = [
-            "paginate": "com.github.markomilos:paginate:0.5.1",
+            "paginate"  : "com.github.markomilos:paginate:0.5.1",
+            "autolayout": "com.zhy:autolayout:1.4.5"
     ]
 
 

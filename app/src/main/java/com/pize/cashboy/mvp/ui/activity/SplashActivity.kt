@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.Animation.AnimationListener
-import com.pize.cashboy.MyApplication
+import com.pize.cashboy.BaseApplication
 import com.pize.cashboy.R
 import com.pize.cashboy.base.BaseActivity
 import com.pize.cashboy.utils.AppUtils
@@ -35,7 +35,7 @@ class SplashActivity : BaseActivity() {
 
     fun initView() {
 
-        tv_version_name.text = "v${AppUtils.getVerName(MyApplication.context)}"
+        tv_version_name.text = "v${AppUtils.getVerName(BaseApplication.context)}"
 
         //渐变展示启动屏
         alphaAnimation = AlphaAnimation(0.3f, 1.0f)
