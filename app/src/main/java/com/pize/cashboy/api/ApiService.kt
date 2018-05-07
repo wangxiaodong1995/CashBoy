@@ -17,6 +17,7 @@ interface ApiService {
         const val HEADER_API_VERSION = "Accept: application/vnd.github.v3+json"
     }
 
+
     @Headers(HEADER_API_VERSION)
     @GET("/users")
     fun getUsers(@Query("since") lastIdQueried: Int, @Query("per_page") perPage: Int): Observable<ArrayList<UserEntity>>
