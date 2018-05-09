@@ -6,6 +6,7 @@ package com.pize.cashboy
  */
 class Constants private constructor() {
 
+
     companion object {
 
         val BUNDLE_VIDEO_DATA = "video_data"
