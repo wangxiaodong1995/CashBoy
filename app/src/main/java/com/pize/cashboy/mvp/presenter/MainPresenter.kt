@@ -1,15 +1,11 @@
 package com.pize.cashboy.mvp.presenter
 
-import android.util.Log
 import com.pize.cashboy.base.BasePresenter
 import com.pize.cashboy.mvp.contract.MainContract
 import com.pize.cashboy.mvp.model.MainModel
-import com.pize.cashboy.mvp.model.entity.BaseResponse
 import com.pize.cashboy.mvp.model.entity.UserEntity
 import com.pize.cashboy.rx.errorhandle.ErrorSubscriber
-import com.pize.cashboy.utils.RxUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
-import java.util.logging.Logger
 
 /**
  * Created by xuhao on 2017/11/8.
@@ -29,7 +25,7 @@ class MainPresenter : BasePresenter<MainContract.View>(), MainContract.Presenter
         }
         // 检测是否绑定 View
         checkViewAttached()
-        var disposable = mainModel.requestUserData(lastIdQueried)
+        mainModel.requestUserData(lastIdQueried)
                 .doOnSubscribe {
                     if (pullToRefresh) {
                         mRootView?.showLoading()
@@ -47,8 +43,8 @@ class MainPresenter : BasePresenter<MainContract.View>(), MainContract.Presenter
                     }
                 }
                 .subscribe(object : ErrorSubscriber<ArrayList<UserEntity>>(rxErrorHandler) {
-                    override fun toNext(userList: ArrayList<UserEntity>) {
-                        mRootView?.setUserDate(userList!!)
+                    override fun toNext(t: ArrayList<UserEntity>) {
+                        mRootView?.setUserDate(t)
                         lastIdQueried++
                     }
                 })

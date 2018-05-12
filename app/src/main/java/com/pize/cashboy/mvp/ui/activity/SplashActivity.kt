@@ -55,7 +55,7 @@ class SplashActivity : BaseActivity() {
 
 
     fun redirectTo() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MainDemoActivity::class.java)
         startActivity(intent)
         finish()
     }

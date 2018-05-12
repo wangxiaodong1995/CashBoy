@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">Kotlin Mvp</string>
+    <string name="my">我的</string>
+    <string name="home">首页</string>
+    <string name="big_money_friend">大钱友</string>
+    <string name="quick_money_friend">快钱友</string>
+    <string name="exit">再按一次退出程序</string>
+    <string name="scan">扫一扫</string>
+    <string name="search_hint_text">搜索关键字</string>
+    <string name="message">消息</string>
+    <string name="exempting_money_friend">免钱友</string>
+    <string name="more_red_envelopes">更多\n红包</string>
+    <string name="have_money">有钱榜</string>
+    <string name="more">更多</string>
 </resources>

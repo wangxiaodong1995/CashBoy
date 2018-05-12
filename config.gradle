@@ -41,8 +41,10 @@ ext {
     ]
 
     view = [
-            "paginate"  : "com.github.markomilos:paginate:0.5.1",
-            "autolayout": "com.zhy:autolayout:1.4.5"
+            "paginate"           : "com.github.markomilos:paginate:0.5.1",
+            "autolayout"         : "com.zhy:autolayout:1.4.5",
+            "smarttablayout"     : "com.ogaclejapan.smarttablayout:library:+",
+            "smarttablayoutUtils": "com.ogaclejapan.smarttablayout:utils-v4:+"
     ]
 
 

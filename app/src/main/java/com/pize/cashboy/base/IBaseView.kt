@@ -18,7 +18,7 @@ interface IBaseView {
 
     fun launchActivity(intent: Intent?)
 
-    fun killMyself();
+    fun killMyself()
 
-    fun geActivity(): Context?
+    fun getActivity(): Context?
 }

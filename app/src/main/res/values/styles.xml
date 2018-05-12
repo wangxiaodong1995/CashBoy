@@ -88,4 +88,13 @@
         <item name="PermissionIconFilterColor">@color/color_blue_dark</item>
     </style>
 
+    <style name="ButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">90px</item>
+        <item name="android:layout_marginLeft">123px</item>
+        <item name="android:layout_marginRight">123px</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
 </resources>

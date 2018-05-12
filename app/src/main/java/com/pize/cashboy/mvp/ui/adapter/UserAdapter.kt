@@ -34,7 +34,7 @@ class UserAdapter(mContext: Context, categoryList: ArrayList<UserEntity>, layout
         // 加载封页图
         GlideApp.with(mContext)
                 .load(data.avatarUrl)
-                .placeholder(R.drawable.placeholder_banner)
+                .placeholder(R.mipmap.ic_action_clear)
                 .transition(DrawableTransitionOptions().crossFade())
                 .into(holder.getView(R.id.iv_avatar))
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120px"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="54px"
+        android:layout_height="54px"
+        android:layout_marginTop="10px"
+        android:layout_toRightOf="@id/iv_list"
+        android:src="@mipmap/ic_list_demo" />
+
+    <ImageView
+        android:id="@+id/iv_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_list_1" />
+
+    <TextView
+        android:id="@+id/tv_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10px"
+        android:text="1"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/textSize_small_8" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_head"
+        android:layout_centerHorizontal="true"
+        android:text="@string/quick_money_friend"
+        android:textColor="@color/color_666666"
+        android:layout_marginTop="12px"
+        android:textSize="@dimen/textSize_small_8" />
+</com.zhy.autolayout.AutoRelativeLayout>

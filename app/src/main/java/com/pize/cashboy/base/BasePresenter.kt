@@ -19,7 +19,7 @@ open class BasePresenter<T : IBaseView> : IPresenter<T> {
 
     var rxErrorHandler: RxErrorHandler = RxErrorHandler
             .builder()
-            .with(mRootView?.geActivity())
+            .with(mRootView?.getActivity())
             .responseErrorListener(ResponseErrorListener.EMPTY)
             .build()
 

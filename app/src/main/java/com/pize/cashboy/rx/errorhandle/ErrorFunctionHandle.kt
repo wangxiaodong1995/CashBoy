@@ -12,6 +12,7 @@ import io.reactivex.functions.Function
  * @author wangxiaodong
  */
 
+@Suppress("UNCHECKED_CAST")
 abstract class ErrorFunctionHandle<T> : Function<BaseResponse<T>, ObservableSource<T>> {
 
     @Throws(Exception::class)

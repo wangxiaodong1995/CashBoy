@@ -16,6 +16,13 @@ android {
         }
     }
     compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.pize.cashboy"
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -34,7 +41,6 @@ android {
         renderscriptSupportModeEnabled true    // Enable RS support
 
         ndk {
-
             //APP的build.gradle设置支持的SO库架构
             abiFilters 'armeabi', 'armeabi-v7a', 'x86'
         }
@@ -51,26 +57,47 @@ android {
             debuggable false
             signingConfig signingConfigs.config
             zipAlignEnabled true
-        }
 
+        }
     }
+
     // 自定义输出配置
     android.applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "cashBoy_v${variant.versionName}_${variant.name}.apk"
+            outputFileName = "kotlinmvp_v${variant.versionName}_${variant.name}.apk"
         }
     }
-    compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
-        sourceCompatibility JavaVersion.VERSION_1_8
-    }
-    productFlavors {
 
-    }
     dexOptions {
         jumboMode true
     }
-    buildToolsVersion '27.0.3'
+
+
+    flavorDimensions "channel", "environment"
+
+    productFlavors {
+        dev {
+            applicationId "com.pize.cashboy"
+            resValue "string", "app_name", "测试-钱男友"
+            buildConfigField "String", "BASR_URL", '"http://test.yooocar.com/"'
+            dimension "environment"
+        }
+
+        pro {
+            applicationId "com.pize.cashboy"
+            resValue "string", "app_name", "钱男友"
+            buildConfigField "String", "BASR_URL", '"http://www.yooocar.com/"'
+            dimension "environment"
+        }
+
+        cashBoy {
+            dimension "channel"
+        }
+
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+    }
 }
 
 
@@ -92,10 +119,6 @@ dependencies {
     // APT dependencies(Kotlin内置的注解处理器)
     kapt rootProject.ext.annotationProcessorLibs
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    // 底部菜单
-    implementation('com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar') {
-        exclude group: 'com.android.support', module: 'support-v4'
-    }
     //kotlin 支持库
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     //GlideOkHttp

@@ -24,7 +24,7 @@ interface ResponseErrorListener {
                 //这里不光是只能打印错误,还可以根据不同的错误作出不同的逻辑处理
                 var msg = "未知错误"
                 if (t is ServerException) {
-                    msg = (t as ServerException).msg!!
+                    msg = t.msg!!
                 } else if (t is UnknownHostException) {
                     msg = "网络不可用"
                 } else if (t is SocketTimeoutException) {
