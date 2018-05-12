@@ -45,8 +45,8 @@
                 android:background="@drawable/et_round_bg"
                 android:drawableLeft="@mipmap/ic_action_search_small"
                 android:drawablePadding="5dp"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:hint="@string/search_hint_text"
                 android:imeOptions="actionSearch"
@@ -247,7 +247,8 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="160px"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_girlfriend" />
 
@@ -300,6 +301,7 @@
                 android:layout_height="wrap_content"
                 android:drawableTop="@mipmap/ic_more"
                 android:text="@string/more"
+                android:textSize="@dimen/textSize_small_10"
                 android:gravity="center" />
         </com.zhy.autolayout.AutoLinearLayout>
     </com.zhy.autolayout.AutoLinearLayout>

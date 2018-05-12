@@ -1,6 +1,298 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_my_background"
+        android:orientation="vertical">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="钱男友会员"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_title"
+                tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10px"
+                android:drawablePadding="5px"
+                android:drawableTop="@mipmap/ic_message"
+                android:padding="20px"
+                android:text="@string/message"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_small_10"
+                tools:ignore="PxUsage,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/tv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:layout_toLeftOf="@id/tv_message"
+                android:drawablePadding="5px"
+                android:drawableTop="@mipmap/ic_setting"
+                android:padding="20px"
+                android:text="@string/setting"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_small_10"
+                tools:ignore="PxUsage,RtlHardcoded" />
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30px"
+            android:paddingLeft="100px"
+            tools:ignore="PxUsage,RtlHardcoded,RtlSymmetry">
+
+            <com.pize.cashboy.view.CircleImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="170px"
+                android:layout_height="170px"
+                android:src="@mipmap/ic_head_demo"
+                app:borderColor="@color/color_D8E48D"
+                app:borderWidth="7px"
+                app:type="circle"
+                tools:ignore="PxUsage,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40px"
+                android:layout_marginTop="20px"
+                android:layout_toRightOf="@id/iv_avatar"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_title"
+                tools:ignore="PxUsage,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/tv_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginLeft="40px"
+                android:layout_marginTop="20px"
+                android:layout_toRightOf="@id/iv_avatar"
+                android:background="@drawable/text_sing_solid"
+                android:drawableLeft="@mipmap/ic_sgin"
+                android:drawablePadding="10px"
+                android:padding="15px"
+                android:text="今日已签到"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_small"
+                tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30px"
+        android:background="@drawable/bg_soild_white"
+        android:orientation="horizontal">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30px"
+            android:layout_weight="1"
+            android:background="@color/color_DEDEDE"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_marginBottom="1px"
+                android:layout_marginLeft="1px"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawablePadding="20px"
+                android:drawableTop="@mipmap/ic_present"
+                android:gravity="center"
+                android:paddingBottom="40px"
+                android:paddingTop="40px"
+                android:text="@string/my_present"
+                android:textColor="@color/color_555555"
+                tools:ignore="PxUsage,RtlHardcoded" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_marginBottom="1px"
+
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawablePadding="20px"
+                android:drawableTop="@mipmap/ic_binding_phone"
+                android:gravity="center"
+                android:paddingBottom="40px"
+                android:paddingTop="40px"
+                android:text="@string/binding_phone"
+                android:textColor="@color/color_555555"
+                tools:ignore="PxUsage,RtlHardcoded" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_marginBottom="1px"
+                android:layout_marginLeft="1px"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawablePadding="20px"
+                android:drawableTop="@mipmap/ic_cherry_blossoms"
+                android:gravity="center"
+                android:paddingBottom="40px"
+                android:paddingTop="40px"
+                android:text="@string/my_cherry_blossoms"
+                android:textColor="@color/color_555555"
+                tools:ignore="PxUsage,RtlHardcoded" />
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/color_DEDEDE" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30px"
+            android:layout_weight="1"
+            android:background="@color/color_DEDEDE"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_marginBottom="1px"
+                android:layout_marginLeft="1px"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawablePadding="20px"
+                android:drawableTop="@mipmap/ic_noun"
+                android:gravity="center"
+                android:paddingBottom="40px"
+                android:paddingTop="40px"
+                android:text="@string/my_noun"
+                android:textColor="@color/color_555555"
+                tools:ignore="PxUsage,RtlHardcoded" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_marginBottom="1px"
+                android:layout_marginLeft="1px"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawablePadding="20px"
+                android:drawableTop="@mipmap/ic_add_investment"
+                android:gravity="center"
+                android:paddingBottom="40px"
+                android:paddingTop="40px"
+                android:text="@string/add_investment"
+                android:textColor="@color/color_555555"
+                tools:ignore="PxUsage,RtlHardcoded" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_marginBottom="1px"
+                android:layout_marginLeft="1px"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawablePadding="20px"
+                android:drawableTop="@mipmap/ic_inviting_friends"
+                android:gravity="center"
+                android:paddingBottom="40px"
+                android:paddingTop="40px"
+                android:text="@string/inviting_friends"
+                android:textColor="@color/color_555555"
+                tools:ignore="PxUsage,RtlHardcoded" />
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/color_DEDEDE" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="30px"
+            android:background="@color/color_DEDEDE"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_marginBottom="1px"
+                android:layout_marginLeft="1px"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawablePadding="20px"
+                android:drawableTop="@mipmap/ic_cash"
+                android:gravity="center"
+                android:paddingBottom="40px"
+                android:paddingTop="40px"
+                android:text="@string/my_cash"
+                android:textColor="@color/color_555555"
+                tools:ignore="PxUsage,RtlHardcoded" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_marginBottom="1px"
+                android:layout_marginLeft="1px"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawablePadding="20px"
+                android:drawableTop="@mipmap/ic_card_voucher"
+                android:gravity="center"
+                android:paddingBottom="40px"
+                android:paddingTop="40px"
+                android:text="@string/my_card_voucher"
+                android:textColor="@color/color_555555"
+                tools:ignore="PxUsage,RtlHardcoded" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_marginBottom="1px"
+                android:layout_marginLeft="1px"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawablePadding="20px"
+                android:drawableTop="@mipmap/ic_customer_service"
+                android:gravity="center"
+                android:paddingBottom="40px"
+                android:paddingTop="40px"
+                android:text="@string/customer_service"
+                android:textColor="@color/color_555555"
+                tools:ignore="PxUsage,RtlHardcoded" />
+        </com.zhy.autolayout.AutoLinearLayout>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

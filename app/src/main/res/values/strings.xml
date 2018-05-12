@@ -11,4 +11,14 @@
     <string name="more_red_envelopes">更多\n红包</string>
     <string name="have_money">有钱榜</string>
     <string name="more">更多</string>
+    <string name="setting">设置</string>
+    <string name="my_present">我的礼品</string>
+    <string name="my_noun">我的余额</string>
+    <string name="my_cash">我的返现</string>
+    <string name="binding_phone">绑定手机</string>
+    <string name="my_cherry_blossoms">我的樱花</string>
+    <string name="add_investment">添加投资</string>
+    <string name="inviting_friends">邀请好友</string>
+    <string name="my_card_voucher">我的卡券</string>
+    <string name="customer_service">QQ客服</string>
 </resources>
