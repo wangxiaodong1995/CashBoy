@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F5F5F5"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/layout_title" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="270px"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/bg_big_money" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="20px">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="10px"
+            android:drawableTop="@mipmap/ic_red_envelopeswahb"
+            android:gravity="center"
+            android:text="@string/my_love_red"
+            android:textColor="@color/color_555555"
+            android:textSize="@dimen/textSize_content" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="10px"
+            android:drawableTop="@mipmap/ic_join_book"
+            android:gravity="center"
+            android:text="@string/join_the_book"
+            android:textColor="@color/color_555555"
+            android:textSize="@dimen/textSize_content" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="10px"
+            android:drawableTop="@mipmap/ic_inviting"
+            android:gravity="center"
+            android:text="@string/inviting_friends"
+            android:textColor="@color/color_555555"
+            android:textSize="@dimen/textSize_content" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="10px"
+            android:drawableTop="@mipmap/ic_calculator"
+            android:gravity="center"
+            android:text="@string/calculator"
+            android:textColor="@color/color_555555"
+            android:textSize="@dimen/textSize_content" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -9,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.classic.common.MultipleStatusView
 import com.pize.cashboy.BaseApplication
+import com.pize.cashboy.R
+import com.pize.cashboy.showToast
+import com.pize.cashboy.view.dialog.SweetAlertDialog
 
 /**
  * @author wangxiaodong
@@ -29,7 +32,11 @@ abstract class BaseFragment : Fragment(), IBaseView {
     /**
      * 多种状态的 View 的切换
      */
-    protected var mLayoutStatusView: MultipleStatusView? = null
+    private var mLayoutStatusView: MultipleStatusView? = null
+    /**
+     * 加载框
+     */
+    private var dialog: SweetAlertDialog? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(getLayoutId(), null)
@@ -81,15 +88,22 @@ abstract class BaseFragment : Fragment(), IBaseView {
     abstract fun lazyLoad()
 
     override fun showLoading() {
-
+        dialog = SweetAlertDialog(activity)
+        if (!dialog!!.isShowing) {
+            dialog?.setTitle(getString(R.string.loading))
+            dialog?.dismiss()
+            dialog?.show()
+        }
     }
 
     override fun hideLoading() {
-
+        if (dialog != null) {
+            dialog?.cancel()
+        }
     }
 
     override fun showMessage(message: String?) {
-
+        showToast(message!!)
     }
 
     override fun launchActivity(intent: Intent?) {
@@ -103,5 +117,6 @@ abstract class BaseFragment : Fragment(), IBaseView {
     override fun onDestroy() {
         super.onDestroy()
         BaseApplication.getRefWatcher(activity)?.watch(activity)
+        this.dialog = null
     }
 }

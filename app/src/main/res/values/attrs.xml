@@ -45,5 +45,11 @@
     </declare-styleable>
 
 
+    <declare-styleable name="TitileView">
+        <attr name="titile_name" format="string" />
+        <attr name="is_back" format="boolean" />
+        <attr name="is_mune" format="boolean" />
+    </declare-styleable>
+
 
 </resources>

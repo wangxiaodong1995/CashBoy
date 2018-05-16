@@ -16,4 +16,5 @@
     <dimen name="textSize_title">18sp</dimen>
 
     <dimen name="division_line">0.5dp</dimen>
+    <dimen name="alert_width">86dp</dimen>
 </resources>

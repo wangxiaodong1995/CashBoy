@@ -7,6 +7,10 @@ import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.pize.cashboy.BaseApplication
+import com.pize.cashboy.R
+import com.pize.cashboy.showToast
+import com.pize.cashboy.view.dialog.SweetAlertDialog
+import kotlinx.android.synthetic.main.alert_dialog.view.*
 
 /**
  * @author wangxiaodong
@@ -16,6 +20,7 @@ import com.pize.cashboy.BaseApplication
 abstract class BaseActivity : AppCompatActivity(), IBaseView {
 
     protected var TAG = this.javaClass.simpleName
+    private var dialog: SweetAlertDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,17 +40,24 @@ abstract class BaseActivity : AppCompatActivity(), IBaseView {
     abstract fun initData(savedInstanceState: Bundle?)
 
     override fun showLoading() {
-
+        dialog = SweetAlertDialog(this)
+        if (!dialog!!.isShowing) {
+            dialog?.setTitle(getString(R.string.loading))
+            dialog?.dismiss()
+            dialog?.show()
+        }
     }
 
     override fun hideLoading() {
-
+        if (dialog != null) {
+            dialog?.cancel()
+        }
     }
 
     override fun getActivity(): Context = getActivity()
 
     override fun showMessage(message: String?) {
-
+        showToast(message!!)
     }
 
     override fun launchActivity(intent: Intent?) {
@@ -59,6 +71,7 @@ abstract class BaseActivity : AppCompatActivity(), IBaseView {
     override fun onDestroy() {
         super.onDestroy()
         BaseApplication.getRefWatcher(this)?.watch(this)
+        this.dialog = null
     }
 
 

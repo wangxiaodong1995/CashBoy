@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -90,10 +90,21 @@
 
     <style name="ButtonStyle">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">90px</item>
-        <item name="android:layout_marginLeft">123px</item>
-        <item name="android:layout_marginRight">123px</item>
+        <item name="android:layout_height" tools:ignore="PxUsage">90px</item>
+        <item name="android:layout_marginLeft" tools:ignore="PxUsage">123px</item>
+        <item name="android:layout_marginRight" tools:ignore="PxUsage">123px</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="SweetAlertDialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimAmount">0.4</item>
     </style>
 
 
