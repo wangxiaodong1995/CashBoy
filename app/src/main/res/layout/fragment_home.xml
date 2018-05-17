@@ -76,7 +76,8 @@
             android:layout_width="match_parent"
             android:layout_height="270px"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_banner" />
+            android:src="@mipmap/ic_banner"
+            tools:ignore="PxUsage" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
@@ -84,35 +85,41 @@
             android:layout_marginTop="20px"
             android:background="@color/white"
             android:orientation="horizontal"
-            android:padding="20px">
+            android:padding="10px"
+            tools:ignore="PxUsage">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableLeft="@mipmap/ic_head_1"
+                android:drawablePadding="10px"
+                android:drawableTop="@mipmap/ic_head_1"
                 android:gravity="center"
-                android:text="@string/big_money_friend"
+                android:text="@string/integral_center"
                 android:textColor="@color/color_666666"
-                android:textSize="@dimen/textSize_content" />
+                android:textSize="@dimen/textSize_content"
+                tools:ignore="PxUsage" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableLeft="@mipmap/ic_head_2"
+                android:drawablePadding="10px"
+                android:drawableTop="@mipmap/ic_head_2"
                 android:gravity="center"
-                android:text="@string/quick_money_friend"
+                android:text="@string/sign_in"
                 android:textColor="@color/color_666666"
-                android:textSize="@dimen/textSize_content" />
+                android:textSize="@dimen/textSize_content"
+                tools:ignore="PxUsage" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableLeft="@mipmap/ic_head_3"
+                android:drawablePadding="10px"
+                android:drawableTop="@mipmap/ic_head_3"
                 android:gravity="center"
-                android:text="@string/exempting_money_friend"
+                android:text="@string/inviting_friends"
                 android:textColor="@color/color_666666"
                 android:textSize="@dimen/textSize_content" />
         </com.zhy.autolayout.AutoLinearLayout>
@@ -234,7 +241,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20px"
                 android:layout_weight="1"
-                android:src="@mipmap/ic_red_envelopes" />
+                android:src="@mipmap/ic_red_envelopes"
+                tools:ignore="PxUsage,RtlHardcoded" />
 
             <TextView
                 android:layout_width="0px"
@@ -274,9 +282,9 @@
                 android:background="@color/white"
                 android:drawableLeft="@mipmap/ic_golden_cup"
                 android:drawablePadding="10px"
+                android:gravity="center"
                 android:paddingLeft="50px"
                 android:paddingRight="50px"
-                android:gravity="center"
                 android:text="@string/have_money"
                 android:textColor="@color/color_666666" />
         </com.zhy.autolayout.AutoRelativeLayout>
@@ -285,13 +293,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:orientation="horizontal"
             android:gravity="center"
+            android:orientation="horizontal"
             android:padding="20px">
+
             <android.support.v7.widget.RecyclerView
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 tools:listitem="@layout/item_have_moeny">
 
             </android.support.v7.widget.RecyclerView>
@@ -300,9 +309,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableTop="@mipmap/ic_more"
+                android:gravity="center"
                 android:text="@string/more"
-                android:textSize="@dimen/textSize_small_10"
-                android:gravity="center" />
+                android:textSize="@dimen/textSize_small_10" />
         </com.zhy.autolayout.AutoLinearLayout>
     </com.zhy.autolayout.AutoLinearLayout>
 </ScrollView>
