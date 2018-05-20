@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_F5F5F5"
@@ -10,7 +11,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="270px"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:src="@mipmap/bg_big_money" />
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -194,7 +195,8 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_big_money" />
         </android.support.v4.widget.SwipeRefreshLayout>
     </com.zhy.autolayout.AutoLinearLayout>
 </com.zhy.autolayout.AutoLinearLayout>
