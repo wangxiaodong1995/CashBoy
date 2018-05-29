@@ -5,9 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 
 import com.pize.cashboy.R
+import com.pize.cashboy.R.id.rl_xl
 import com.pize.cashboy.base.BaseActivity
 
 import com.pize.cashboy.api.AppConstant
+import com.pize.cashboy.mvp.presenter.LoginPresenter
+import com.pize.cashboy.mvp.presenter.MainPresenter
 
 import com.tencent.mm.opensdk.modelmsg.SendAuth
 import com.tencent.mm.opensdk.openapi.IWXAPI
@@ -29,6 +32,8 @@ class LoginActivity : BaseActivity() {
      * 微信登录相关
      */
     private var api: IWXAPI? = null
+
+    private val mPresenter: LoginPresenter  by lazy { LoginPresenter() }
 
     override fun layoutId(): Int = R.layout.activity_login
 
@@ -57,7 +62,7 @@ class LoginActivity : BaseActivity() {
     fun toWxLogin() {
         val req: SendAuth.Req = SendAuth.Req()
         req.scope = "snsapi_userinfo"
-        req.state = "test"
+        req.state = getString(R.string.app_name)
         var isSendReq: Boolean = api!!.sendReq(req)
         if (!isSendReq) {
             showMessage("您未安装微信")
@@ -66,7 +71,7 @@ class LoginActivity : BaseActivity() {
 
     @Subscriber(tag = AppConstant.LOGIN, mode = ThreadMode.MAIN)
     fun onEventMainThread(code: String) {
-        //mPresenter.toWxLogin(code, state)
+        mPresenter.getWxData(code)
     }
 
     override fun onDestroy() {

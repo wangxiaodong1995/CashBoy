@@ -54,7 +54,7 @@
             android:name=".mvp.ui.activity.SplashActivity"
             android:screenOrientation="portrait" />
 
-        <activityl
+        <activity
             android:name=".wxapi.WXEntryActivity"
             android:exported="true"
             android:screenOrientation="portrait"
