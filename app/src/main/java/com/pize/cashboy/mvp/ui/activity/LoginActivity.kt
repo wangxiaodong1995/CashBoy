@@ -1,24 +1,22 @@
 package com.pize.cashboy.mvp.ui.activity
 
-import android.Manifest
-import android.content.Context
+
 import android.content.Intent
 import android.os.Bundle
-import android.view.animation.AlphaAnimation
-import android.view.animation.Animation
-import android.view.animation.Animation.AnimationListener
-import com.pize.cashboy.BaseApplication
+
 import com.pize.cashboy.R
 import com.pize.cashboy.base.BaseActivity
-import com.pize.cashboy.utils.AppUtils
-import com.orhanobut.logger.Logger
-import com.pize.cashboy.BaseApplication.Companion.context
-import com.pize.cashboy.base.BasePresenter
+
+import com.pize.cashboy.api.AppConstant
+
+import com.tencent.mm.opensdk.modelmsg.SendAuth
+import com.tencent.mm.opensdk.openapi.IWXAPI
+import com.tencent.mm.opensdk.openapi.WXAPIFactory
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_splash.*
-import me.weyye.hipermission.HiPermission
-import me.weyye.hipermission.PermissionCallback
-import me.weyye.hipermission.PermissionItem
+
+import org.simple.eventbus.EventBus
+import org.simple.eventbus.Subscriber
+import org.simple.eventbus.ThreadMode
 
 
 /**
@@ -27,13 +25,21 @@ import me.weyye.hipermission.PermissionItem
  */
 
 class LoginActivity : BaseActivity() {
+    /**
+     * 微信登录相关
+     */
+    private var api: IWXAPI? = null
 
     override fun layoutId(): Int = R.layout.activity_login
 
     override fun initData(savedInstanceState: Bundle?) {
+
+        api = WXAPIFactory.createWXAPI(this, AppConstant.APP_ID, true)
+        EventBus.getDefault().register(this)
+        api!!.registerApp(AppConstant.APP_ID)
+
         rl_wx.setOnClickListener {
-            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-            launchActivity(intent)
+            toWxLogin()
         }
 
         rl_qq.setOnClickListener {
@@ -46,6 +52,25 @@ class LoginActivity : BaseActivity() {
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
             launchActivity(intent)
         }
+    }
+
+    fun toWxLogin() {
+        val req: SendAuth.Req = SendAuth.Req()
+        req.scope = "snsapi_userinfo"
+        req.state = "test"
+        var isSendReq: Boolean = api!!.sendReq(req)
+        if (!isSendReq) {
+            showMessage("您未安装微信")
+        }
+    }
+
+    @Subscriber(tag = AppConstant.LOGIN, mode = ThreadMode.MAIN)
+    fun onEventMainThread(code: String) {
+        //mPresenter.toWxLogin(code, state)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 
 }

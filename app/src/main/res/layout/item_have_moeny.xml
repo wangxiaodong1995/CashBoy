@@ -5,18 +5,18 @@
 
 
     <ImageView
+        android:id="@+id/iv_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_list_1" />
+
+    <ImageView
         android:id="@+id/iv_head"
         android:layout_width="54px"
         android:layout_height="54px"
         android:layout_marginTop="10px"
         android:layout_toRightOf="@id/iv_list"
         android:src="@mipmap/ic_list_demo" />
-
-    <ImageView
-        android:id="@+id/iv_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_list_1" />
 
     <TextView
         android:id="@+id/tv_list"
@@ -32,8 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/iv_head"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="12px"
         android:text="@string/quick_money_friend"
         android:textColor="@color/color_666666"
-        android:layout_marginTop="12px"
         android:textSize="@dimen/textSize_small_8" />
 </com.zhy.autolayout.AutoRelativeLayout>

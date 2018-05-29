@@ -37,7 +37,8 @@ ext {
 
     rxJava = [
             rxJava   : "io.reactivex.rxjava2:rxjava:$dependVersion.rxJava",
-            rxAndroid: "io.reactivex.rxjava2:rxandroid:$dependVersion.rxAndroid"
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:$dependVersion.rxAndroid",
+            "androideventbus"          : "org.simple:androideventbus:1.0.5.1",
     ]
 
     view = [

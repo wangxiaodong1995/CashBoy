@@ -22,6 +22,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
+    aaptOptions { cruncherEnabled = false }
 
     defaultConfig {
         applicationId "com.pize.cashboy"
@@ -61,10 +62,10 @@ android {
         }
     }
 
-    // 自定义输出配置
+// 自定义输出配置
     android.applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "kotlinmvp_v${variant.versionName}_${variant.name}.apk"
+            outputFileName = "cashBoy_v${variant.versionName}_${variant.name}.apk"
         }
     }
 
@@ -140,8 +141,8 @@ dependencies {
     //leakCanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
-    //腾讯 bugly
-    implementation 'com.tencent.bugly:crashreport:2.6.6.1'
     //运行时权限
     implementation 'me.weyye.hipermission:library:1.0.7'
+    //微信登录
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 }

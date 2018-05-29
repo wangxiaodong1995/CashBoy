@@ -2,6 +2,7 @@
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -9,7 +10,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="20px">
+        android:padding="30px">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -42,13 +43,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="30px">
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="left"
             android:orientation="vertical">
 
             <TextView
@@ -70,7 +72,6 @@
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -92,7 +93,6 @@
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
             android:orientation="vertical">
 
 
@@ -116,7 +116,8 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="100px"
             android:text="查看红包攻略"
-            android:textColor="@color/color_E4007F" />
+            android:textColor="@color/color_E4007F"
+            android:textSize="11sp" />
 
 
         <TextView
@@ -132,4 +133,10 @@
             android:text="去投资"
             android:textColor="@color/color_E4007F" />
     </com.zhy.autolayout.AutoRelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="30px"
+        android:background="@color/color_DEDEDE" />
 </com.zhy.autolayout.AutoLinearLayout>

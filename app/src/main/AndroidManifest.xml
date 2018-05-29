@@ -47,12 +47,18 @@
 
         <activity
             android:name=".mvp.ui.activity.MainActivity"
+            android:windowSoftInputMode="stateHidden"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".mvp.ui.activity.SplashActivity"
             android:screenOrientation="portrait" />
 
+        <activityl
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <meta-data
             android:name="design_width"

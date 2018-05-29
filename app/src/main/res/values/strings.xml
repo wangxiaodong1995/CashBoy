@@ -27,4 +27,14 @@
     <string name="calculator">计算器</string>
     <string name="integral_center">积分中心</string>
     <string name="sign_in">每日签到</string>
+
+
+
+
+    <string name="errcode_success">发送成功</string>
+    <string name="errcode_cancel">发送取消</string>
+    <string name="errcode_deny">发送被拒绝</string>
+    <string name="errcode_unsupported">不支持错误</string>
+    <string name="errcode_unknown">发送返回</string>
+    <string name="errcode_ban">签名配置与app实际的签名不匹配</string>
 </resources>
